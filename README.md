@@ -1,7 +1,18 @@
 # 🏛️ Iglesia Casa de Dios - Ángeles del Puente
 
-![Iglesia Casa de Dios](img/image.png)
-
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" style="border: none;">
+         <img src="img/image.png" alt="Logo Casa de Dios" width="240">
+      </td>
+      <td width="50" style="border: none;"></td>
+      <td align="center" style="border: none;">
+         <img src="img/image-1.png" alt="Logo Ángeles del Puente" width="209">
+      </td>
+    </tr>
+  </table>
+</div>
 Sitio web oficial de la Iglesia Casa de Dios en Corrientes, Argentina. Un espacio digital para conectar con nuestra comunidad, conocer nuestros eventos y mantenerte en contacto con nosotros.
 
 ---
