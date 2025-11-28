@@ -382,7 +382,8 @@ h2::after {
     background: var(--bg-card);
     padding: 2.5rem 2rem;
     border-radius: 8px;
-    width: 320px;
+    width: 100%;
+    max-width: 600px;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
@@ -415,13 +416,13 @@ h2::after {
 .event-card h3 {
     color: var(--text-color);
     margin-bottom: 1rem;
-    font-size: 1.4rem;
+    font-size: 2rem;
 }
 
 .event-card p {
     color: var(--text-muted);
     line-height: 1.6;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* Sobre Nosotros */
@@ -657,6 +658,10 @@ footer {
         --header-height: 80px;
     }
 
+    section {
+        padding: 4rem 0;
+    }
+
     .header .container {
         padding: 0 1.5rem;
         padding-top: 0;
@@ -664,8 +669,36 @@ footer {
     }
 
     .logo img {
-        width: 50px;
-        height: 50px;
+        /*Logo CDD*/
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo img:first-child {
+        /*Logo CC*/
+        width: 90px;
+        height: 90px;
+    }
+
+    .logo img:last-child {
+        /*Logo AP*/
+        width: 55px;
+        height: 55px;
+    }
+
+    .header.scrolled .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .header.scrolled .logo img:first-child {
+        width: 70px;
+        height: 70px;
+    }
+
+    .header.scrolled .logo img:last-child {
+        width: 40px;
+        height: 40px;
     }
 
     .nav-links {
@@ -718,6 +751,17 @@ footer {
 
     .carousel-slide img {
         height: 300px;
+    }
+
+    .contact-container {
+        padding: 0;
+        gap: 2rem;
+    }
+
+    .contact-info,
+    .contact-form-wrapper {
+        padding: 1.5rem;
+        min-width: 100%;
     }
 }
 
