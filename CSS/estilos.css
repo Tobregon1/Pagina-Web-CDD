@@ -383,7 +383,7 @@ h2::after {
     padding: 2.5rem 2rem;
     border-radius: 8px;
     width: 100%;
-    max-width: 340px;
+    max-width: 600px;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
@@ -416,13 +416,13 @@ h2::after {
 .event-card h3 {
     color: var(--text-color);
     margin-bottom: 1rem;
-    font-size: 1.4rem;
+    font-size: 2rem;
 }
 
 .event-card p {
     color: var(--text-muted);
     line-height: 1.6;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* Sobre Nosotros */
