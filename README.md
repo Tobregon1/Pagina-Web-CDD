@@ -4,11 +4,11 @@
   <table>
     <tr>
       <td align="center" style="border: none;">
-         <img src="img/image.png" alt="Logo Casa de Dios" width="240">
+         <img src="img/3.png" alt="Logo Casa de Dios" width="180">
       </td>
       <td width="50" style="border: none;"></td>
       <td align="center" style="border: none;">
-         <img src="img/image-1.png" alt="Logo Ángeles del Puente" width="209">
+         <img src="img/4.png" alt="Logo Ángeles del Puente" width="180">
       </td>
     </tr>
   </table>
@@ -91,8 +91,8 @@ PAG Web-CDD/
 ├── js/
 │   └── main.js            # JavaScript principal
 ├── img/                   # Imágenes e íconos
-│   ├── image.png          # Logo Casa de Dios
-│   ├── image-1.png        # Logo Ángeles del Puente
+│   ├── 3.png          # Logo Casa de Dios
+│   ├── 4.png        # Logo Ángeles del Puente
 │   ├── CDD_desde.arriba.jpg  # Vista aérea
 │   └── ...                # Otras imágenes
 └── README.md              # Este archivo

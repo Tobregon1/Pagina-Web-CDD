@@ -12,7 +12,7 @@
     --header-bg-scrolled: rgba(0, 0, 0, 0.95);
 
     /* Fondo INICIAL (Arriba del todo): Degradado negro a transparente */
-    --header-bg-initial: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.0) 100%);
+    --header-bg-initial: transparent;
 
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     --text-muted: #cccccc;
@@ -27,7 +27,7 @@ body.light-mode {
     --border-color: #e0e0e0;
 
     --header-bg-scrolled: rgba(255, 255, 255, 0.98);
-    --header-bg-initial: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(255, 255, 255) 100%);
+    --header-bg-initial: transparent;
 
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     --text-muted: #666666;
@@ -47,6 +47,10 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
 /* --- HEADER OPTIMIZADO --- */
 .header {
     position: fixed;
@@ -55,17 +59,26 @@ body {
     width: 100%;
     height: var(--header-height);
     z-index: 1000;
-    background: var(--header-bg-initial);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: var(--bg-color); /* Sigue el tema por defecto */
     transition: all 0.3s ease;
-    color: var(--text-color);
+    color: var(--text-color); /* Sigue el tema por defecto */
+}
+
+/* Solo en el inicio el encabezado arranca transparente */
+body.home-page .header:not(.scrolled) {
+    background: transparent;
 }
 
 .header.scrolled {
     background: var(--header-bg-scrolled);
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
     height: 90px;
+}
+
+/* Eliminar regla anterior que forzaba negro en subpáginas modo claro */
+body:not(.home-page).light-mode .header {
+    background: var(--bg-color);
+    color: var(--text-color);
 }
 
 body.light-mode .header.scrolled {
@@ -99,8 +112,8 @@ body.light-mode .header.scrolled {
 
 .logo img {
     /*Logo CDD*/
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     display: block;
     transition: all 0.3s ease;
@@ -117,8 +130,8 @@ body.light-mode .header.scrolled {
 
 .logo img:last-child {
     /*Logo AP*/
-    width: 105px;
-    height: 105px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     display: block;
     transition: all 0.3s ease;
@@ -133,8 +146,8 @@ body.light-mode .header.scrolled {
 
 .header.scrolled .logo img:last-child {
     /*logo AP*/
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
 }
 
 .header.scrolled .logo img:first-child {
@@ -143,14 +156,30 @@ body.light-mode .header.scrolled {
     height: 160px;
 }
 
-/* Primer logo (CC.png) - se vuelve blanco en modo oscuro */
+/* Primer logo (CC.png) - blanco solo en modo oscuro o en el inicio (arriba) */
 .logo img:first-child {
     filter: brightness(0) invert(1);
 }
 
-/* En modo claro, el primer logo vuelve a su color original */
-body.light-mode .logo img:first-child {
+/* En modo claro fuera del inicio (arriba), los logos deben ser negros */
+body.light-mode:not(.home-page) .header .logo img:first-child {
     filter: none;
+}
+
+body.light-mode:not(.home-page) .header .logo img:nth-child(2),
+body.light-mode:not(.home-page) .header .logo img:last-child {
+    filter: brightness(0);
+}
+
+/* En el inicio, modo claro Y al hacer scroll, el primer logo vuelve a negro */
+body.home-page.light-mode .header.scrolled .logo img:first-child {
+    filter: none;
+}
+
+/* En el inicio, modo claro Y al hacer scroll, los otros logos también se vuelven negros */
+body.home-page.light-mode .header.scrolled .logo img:nth-child(2),
+body.home-page.light-mode .header.scrolled .logo img:last-child {
+    filter: brightness(0);
 }
 
 /* ---  GRUPO DERECHO (Menú + Iconos) --- */
@@ -182,9 +211,9 @@ body.light-mode .logo img:first-child {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    text-transform: uppercase;
+    color: inherit; /* Seguir el color del header */
+    font-weight: 400;
+    text-transform: capitalize;
     font-size: 0.95rem;
     letter-spacing: 1px;
     padding: 0.5rem 0;
@@ -211,6 +240,22 @@ body.light-mode .logo img:first-child {
     width: 100%;
 }
 
+/* Forzar color blanco en el inicio cuando está arriba */
+body.home-page .header:not(.scrolled) .nav-links a,
+body.home-page .header:not(.scrolled) .theme-toggle,
+body.home-page .header:not(.scrolled) .hamburger {
+    color: #ffffff;
+}
+
+body.home-page .header:not(.scrolled) .theme-toggle {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Al hacer scroll en el INICIO, toman el color del tema actual */
+body.home-page .header.scrolled .nav-links a {
+    color: var(--text-color);
+}
+
 /* Controles (Tema + Hamburguesa) */
 .header-controls {
     display: flex;
@@ -221,8 +266,8 @@ body.light-mode .logo img:first-child {
 /* Botón de Tema */
 .theme-toggle {
     background: transparent;
-    border: 1px solid rgba(128, 128, 128, 0.5);
-    color: var(--text-color);
+    border: 1px solid currentColor; /* Sigue el color del texto */
+    color: inherit; /* Sigue el color del texto */
     padding: 0.5rem;
     border-radius: 50%;
     cursor: pointer;
@@ -234,8 +279,16 @@ body.light-mode .logo img:first-child {
     transition: all 0.3s ease;
 }
 
-body.light-mode .theme-toggle {
+/* Al hacer scroll en el INICIO, el botón de tema toma el color/borde correspondiente */
+body.home-page .header.scrolled .theme-toggle {
+    border-color: rgba(128, 128, 128, 0.5);
+    color: var(--text-color);
+}
+
+/* En modo claro y afuera del inicio, el botón de tema toma el color correspondiente */
+body.light-mode:not(.home-page) .header .theme-toggle {
     border-color: rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
 }
 
 .theme-toggle:hover {
@@ -249,9 +302,17 @@ body.light-mode .theme-toggle {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
-    color: var(--text-color);
+    color: #ffffff;
     background: none;
     border: none;
+}
+
+.header.scrolled .hamburger {
+    color: #ffffff;
+}
+
+body.home-page .header.scrolled .hamburger {
+    color: var(--text-color);
 }
 
 /* --- HERO SECTION --- */
@@ -270,10 +331,10 @@ body.light-mode .theme-toggle {
 .hero::before {
     content: "";
     position: absolute;
-    top: 140px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 140px);
+    height: 100%;
     background-image: url('../img/CDD_desde.arriba.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -870,4 +931,124 @@ footer {
 
 .scroll-top-btn:active {
     transform: translateY(0) scale(0.95);
+}
+
+/* --- ACADEMIAS GRID --- */
+.academies-grid-container {
+    padding: 6rem 2rem;
+    max-width: 1100px; /* Reducido de 1400px para que los cuadros se vean más chicos */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.academies-intro {
+    position: relative;
+    text-align: center;
+    margin-bottom: 5rem;
+    padding: 4rem 0;
+}
+
+.academies-title-bg {
+    font-size: clamp(4rem, 15vw, 12rem);
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.08); /* Más visible en fondo oscuro */
+    text-transform: lowercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .academies-title-bg {
+    color: rgba(0, 0, 0, 0.1); /* Visible en modo claro */
+}
+
+.academies-intro h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.academies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Forzado a 4 columnas como pidió el usuario */
+    gap: 1.5rem; /* Un poco menos de espacio para que quepan bien */
+}
+
+.academy-card {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    background: #000;
+    text-decoration: none;
+    display: block;
+}
+
+.academy-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.academy-card:hover {
+    transform: scale(0.98); /* Micro-interacción */
+}
+
+.academy-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.7);
+}
+
+.academy-info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: #fff;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.academy-card:hover .academy-info-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.academy-info-overlay h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.academy-info-overlay p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .academies-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    .academies-intro {
+        padding: 2rem 0;
+    }
 }
