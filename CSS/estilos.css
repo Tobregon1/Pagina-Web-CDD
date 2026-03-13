@@ -236,6 +236,15 @@ body.home-page.light-mode .header.scrolled .logo img:last-child {
     width: 100%;
 }
 
+/* Estilo para el enlace activo (página actual) */
+.nav-links a.active {
+    color: var(--accent-color);
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
 /* Forzar color blanco en el inicio cuando está arriba */
 body.home-page .header:not(.scrolled) .nav-links a,
 body.home-page .header:not(.scrolled) .theme-toggle,
@@ -1627,3 +1636,104 @@ body.light-mode .ministerios-title-bg {
     }
 }
 
+/* --- PÁGINA DE DONACIONES --- */
+.donation-card {
+    background: var(--bg-card);
+    padding: 4rem 3rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(193, 159, 99, 0.15);
+    margin-bottom: 4rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.donation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(193, 159, 99, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.donation-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(193, 159, 99, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.donation-card:hover::before {
+    left: 100%;
+}
+
+.donation-card-primary {
+    border: 2px solid var(--accent-color);
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(193, 159, 99, 0.05) 100%);
+}
+
+.donation-method-card {
+    background: var(--bg-card);
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(193, 159, 99, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.donation-method-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.donation-method-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(193, 159, 99, 0.15);
+}
+
+.donation-method-card:hover::before {
+    transform: scaleX(1);
+}
+
+.qr-container {
+    padding: 1.5rem;
+    background: rgba(193, 159, 99, 0.05);
+    border-radius: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.qr-container:hover {
+    background: rgba(193, 159, 99, 0.12);
+    transform: scale(1.05);
+}
+
+.qr-container img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* Media query para donaciones en móviles */
+@media (max-width: 768px) {
+    .donation-card {
+        padding: 2.5rem 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .donation-method-card {
+        padding: 2.5rem 2rem;
+    }
+}

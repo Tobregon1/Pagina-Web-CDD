@@ -46,46 +46,62 @@
     </header>
 
     <!-- Contenido Principal -->
-    <main style="margin-top: 130px; min-height: 80vh;">
-        <div class="container" style="max-width: 800px; padding-bottom: 5rem; text-align: center;">
-            <div style="margin-bottom: 3rem;">
+    <main style="margin-top: 130px; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+        <div class="container" style="max-width: 900px; padding: 5rem 2rem; width: 100%; margin: 0 auto;">
+            <div style="margin-bottom: 4rem; text-align: center;">
                 <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Generosidad</p>
                 <h1 style="font-size: clamp(2.5rem, 8vw, 4rem); margin-top: 1rem;">TU APOYO HACE LA DIFERENCIA</h1>
-                <p style="color: var(--text-muted); font-size: 1.2rem; margin-top: 1.5rem; line-height: 1.6;">
+                <p style="color: var(--text-muted); font-size: 1.2rem; margin-top: 1.5rem; line-height: 1.8;">
                     "Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre." <br>
                     <span style="font-style: italic; font-size: 1rem;">2 Corintios 9:7</span>
                 </p>
             </div>
 
             <!-- Mercado Pago Card -->
-            <div style="background: var(--bg-card); padding: 3rem; border-radius: 15px; box-shadow: var(--shadow); border: 1px solid rgba(128, 128, 128, 0.1); margin-bottom: 3rem;">
-                <img src="https://logotipous.com/wp-content/uploads/2021/08/Mercado-Pago-Logo.png" alt="Mercado Pago" style="height: 40px; margin-bottom: 2rem;">
-                <h2 style="margin-bottom: 1.5rem; font-size: 2rem;">Donar vía Mercado Pago</h2>
-                <p style="margin-bottom: 2.5rem; color: var(--text-muted);">Realiza tu donación de forma segura y rápida a través de nuestra cuenta oficial.</p>
-                
-                <a href="https://link.mercadopago.com.ar/TU-LINK-AQUI" target="_blank" class="btn-whatsapp" style="text-decoration: none; padding: 1.2rem 3rem; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 0.8rem;">
-                    <i class="fas fa-hand-holding-heart"></i> Realizar Donación
-                </a>
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">* Se abrirá una nueva pestaña en Mercado Pago</p>
+            <div class="donation-card donation-card-primary">
+                <div style="text-align: center;">
+                    <img src="./img/mp.png" alt="Mercado Pago" style="height: 100px; margin-bottom: 2.5rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    <h2 style="margin-bottom: 1rem; font-size: 2.2rem;">Donar vía Mercado Pago</h2>
+                    <p style="margin-bottom: 2.5rem; color: var(--text-muted); font-size: 1.05rem;">Realiza tu donación de forma segura y rápida a través de nuestra cuenta oficial.</p>
+                    
+                    <a href="https://link.mercadopago.com.ar/TU-LINK-AQUI" target="_blank" class="btn-whatsapp" style="text-decoration: none; padding: 1.3rem 3.5rem; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 0.8rem;">
+                        <i class="fas fa-hand-holding-heart"></i> Realizar Donación
+                    </a>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1.5rem;">* Se abrirá una nueva pestaña en Mercado Pago</p>
+                </div>
             </div>
 
             <!-- Otros Medios -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div style="background: var(--bg-card); padding: 2rem; border-radius: 10px; border: 1px solid rgba(128, 128, 128, 0.1); text-align: left;">
-                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;"><i class="fas fa-university"></i> Transferencia Bancaria</h3>
-                    <p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Alias:</strong> iglesiacdd.corrientes</p>
-                    <p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Titular:</strong> Congregación Cristiana</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Banco de la Nación Argentina</p>
+            <h3 style="text-align: center; margin-top: 5rem; margin-bottom: 2.5rem; font-size: 1.5rem;">Otros Métodos de Pago</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+                <div class="donation-method-card">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3 style="color: var(--text-color); margin-bottom: 1.5rem; font-size: 1.3rem;">Transferencia Bancaria</h3>
+                        <p style="font-size: 0.95rem; margin-bottom: 0.8rem;"><strong>Alias:</strong> <span style="color: var(--accent-color);">iglesiacdd.corrientes</span></p>
+                        <p style="font-size: 0.95rem; margin-bottom: 0.8rem;"><strong>Titular:</strong> Congregación Cristiana</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Banco de la Nación Argentina</p>
+                    </div>
                 </div>
-                <div style="background: var(--bg-card); padding: 2rem; border-radius: 10px; border: 1px solid rgba(128, 128, 128, 0.1); text-align: left;">
-                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;"><i class="fas fa-qrcode"></i> Escanear QR</h3>
-                    <img src="img/pagoqr.png" alt="QR Mercado Pago - Alias: fh.cdd" style="width: 100%; max-width: 200px; margin: 0 auto 1.5rem auto; display: block; border-radius: 8px;">
-                    <p style="font-size: 0.95rem; color: var(--text-muted); text-align: center;">Escanéa este código desde la app de Mercado Pago para realizar tu donación.<br><strong>Alias: fh.cdd</strong></p>
+
+                <div class="donation-method-card donation-qr-card">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h3 style="color: var(--text-color); margin-bottom: 1.5rem; font-size: 1.3rem;">Escanear QR</h3>
+                        <div class="qr-container">
+                            <img src="img/pagoqr.png" alt="QR Mercado Pago - Alias: fh.cdd" style="width: 100%; max-width: 180px; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease;">
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1.5rem; text-align: center;">Escanea desde tu app de Mercado Pago<br><strong style="color: var(--text-color);">Alias: fh.cdd</strong></p>
+                    </div>
                 </div>
             </div>
 
-            <div style="margin-top: 5rem;">
-                <a href="index.html" class="btn-whatsapp" style="text-decoration: none; background: transparent; border: 1px solid var(--accent-color); color: var(--accent-color);">
+            <div style="text-align: center; margin-top: 5rem;">
+                <a href="index.html" class="btn-whatsapp" style="text-decoration: none; background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color); transition: all 0.3s ease;">
                     <i class="fas fa-arrow-left"></i> Volver al Inicio
                 </a>
             </div>

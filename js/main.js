@@ -194,3 +194,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// --- Detectar página actual y marcar enlace como activo ---
+function setActiveNavLink() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const currentPath = window.location.pathname;
+    const currentHash = window.location.hash;
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        
+        const href = link.getAttribute('href');
+        
+        // Detectar si estamos en una página específica (ministerios, academias, donar)
+        if (href && !href.startsWith('#')) {
+            if (currentPath.includes(href.replace('.html', ''))) {
+                link.classList.add('active');
+            }
+        }
+        // Para el index y sus secciones
+        else if (href && href.startsWith('#')) {
+            if (currentHash === href) {
+                link.classList.add('active');
+            }
+        }
+    });
+}
+
+// Ejecutar al cargar la página
+setActiveNavLink();
+
+// Ejecutar cuando cambia el hash (navegación a secciones)
+window.addEventListener('hashchange', setActiveNavLink);
