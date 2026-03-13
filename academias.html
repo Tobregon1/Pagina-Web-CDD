@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academias - Iglesia Casa de Dios</title>
+    <meta name="description"
+        content="Academias de la Iglesia Casa de Dios. Formación en música, artes y estudios bíblicos.">
+    <link rel="icon" type="image/png" href="img/image.png">
+    <link rel="stylesheet" href="./CSS/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header / Menú -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/CC.png" alt="Logo Congregacion cristiana">
+                <img src="img/3.png" alt="Logo Iglesia">
+                <img src="img/4.png" alt="Logo Angeles del Puente">
+            </a>
+            <div class="right-group">
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#sobre-nosotros">Nosotros</a></li>
+                        <li><a href="ministerios.html">Ministerios</a></li>
+                        <li><a href="academias.html">Academias</a></li>
+                        <li><a href="donar.html">Donar</a></li>
+                        <li><a href="index.html#contactos">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="header-controls">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <div class="hamburger" id="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="academies-page" style="margin-top: 130px;">
+        <div class="academies-grid-container">
+            <header class="academies-intro">
+                <h2 style="position: relative; z-index: 1; margin: 0; font-size: clamp(2rem, 4vw, 3rem); text-transform: capitalize;">Academias</h2>
+            </header>
+
+            <div class="academies-grid">
+                <!-- Academia de Música -->
+                <a href="academia-musica.html" class="academy-card">
+                    <img src="img/academia-musica.png" alt="Academia de Música">
+                    <div class="academy-info-overlay">
+                        <p>Excelencia Artística</p>
+                        <h3>MÚSICA</h3>
+                    </div>
+                </a>
+
+                <a href="academia-canto.html" class="academy-card">
+                    <img src="img/academia-canto.png" alt="Academia de Canto">
+                    <div class="academy-info-overlay">
+                        <p>Excelencia de Voz</p>
+                        <h3>CANTO</h3>
+                    </div>
+                </a>
+
+                <a href="academia-baile.html" class="academy-card">
+                    <img src="img/baile.png" alt="Academia de Baile">
+                    <div class="academy-info-overlay">
+                        <p>Excelencia en Baile</p>
+                        <h3>BAILE</h3>
+                    </div>
+                </a>
+
+                <a href="academia-biblia.html" class="academy-card">
+                    <img src="img/academia-biblia.png" alt="Instituto Bíblico">
+                    <div class="academy-info-overlay">
+                        <p>Fundamento de Fe</p>
+                        <h3>BIBLIA</h3>
+                    </div>
+                </a>
+
+                <a href="academia-artes.html" class="academy-card">
+                    <img src="img/academia-artes.png" alt="Academia de Artes">
+                    <div class="academy-info-overlay">
+                        <p>Expresión Creativa</p>
+                        <h3>ARTES</h3>
+                    </div>
+                </a>
+
+                <a href="academia-liderazgo.html" class="academy-card">
+                    <img src="img/academia-liderazgo.png" alt="Escuela de Liderazgo">
+                    <div class="academy-info-overlay">
+                        <p>Visión y Misión</p>
+                        <h3>LIDERAZGO</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: 6rem;">
+                <a href="index.html" class="btn-whatsapp" style="text-decoration: none; padding: 1.2rem 3rem;">
+                    <i class="fas fa-arrow-left"></i> Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Iglesia Casa de Dios. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
