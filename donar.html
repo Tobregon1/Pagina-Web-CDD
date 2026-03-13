@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donaciones - Iglesia Casa de Dios</title>
+    <meta name="description"
+        content="Apoya a la Iglesia Casa de Dios. Tu generosidad nos permite seguir bendiciendo a nuestra comunidad.">
+    <link rel="icon" type="image/png" href="img/image.png">
+    <link rel="stylesheet" href="./CSS/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header / Menú -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/CC.png" alt="Logo Congregacion cristiana">
+                <img src="img/3.png" alt="Logo Iglesia">
+                <img src="img/4.png" alt="Logo Angeles del Puente">
+            </a>
+            <div class="right-group">
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#sobre-nosotros">Nosotros</a></li>
+                        <li><a href="ministerios.html">Ministerios</a></li>
+                        <li><a href="academias.html">Academias</a></li>
+                        <li><a href="donar.html">Donar</a></li>
+                        <li><a href="index.html#contactos">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="header-controls">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <div class="hamburger" id="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main style="margin-top: 130px; min-height: 80vh;">
+        <div class="container" style="max-width: 800px; padding-bottom: 5rem; text-align: center;">
+            <div style="margin-bottom: 3rem;">
+                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Generosidad</p>
+                <h1 style="font-size: clamp(2.5rem, 8vw, 4rem); margin-top: 1rem;">TU APOYO HACE LA DIFERENCIA</h1>
+                <p style="color: var(--text-muted); font-size: 1.2rem; margin-top: 1.5rem; line-height: 1.6;">
+                    "Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre." <br>
+                    <span style="font-style: italic; font-size: 1rem;">2 Corintios 9:7</span>
+                </p>
+            </div>
+
+            <!-- Mercado Pago Card -->
+            <div style="background: var(--bg-card); padding: 3rem; border-radius: 15px; box-shadow: var(--shadow); border: 1px solid rgba(128, 128, 128, 0.1); margin-bottom: 3rem;">
+                <img src="https://logotipous.com/wp-content/uploads/2021/08/Mercado-Pago-Logo.png" alt="Mercado Pago" style="height: 40px; margin-bottom: 2rem;">
+                <h2 style="margin-bottom: 1.5rem; font-size: 2rem;">Donar vía Mercado Pago</h2>
+                <p style="margin-bottom: 2.5rem; color: var(--text-muted);">Realiza tu donación de forma segura y rápida a través de nuestra cuenta oficial.</p>
+                
+                <a href="https://link.mercadopago.com.ar/TU-LINK-AQUI" target="_blank" class="btn-whatsapp" style="text-decoration: none; padding: 1.2rem 3rem; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 0.8rem;">
+                    <i class="fas fa-hand-holding-heart"></i> Realizar Donación
+                </a>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">* Se abrirá una nueva pestaña en Mercado Pago</p>
+            </div>
+
+            <!-- Otros Medios -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="background: var(--bg-card); padding: 2rem; border-radius: 10px; border: 1px solid rgba(128, 128, 128, 0.1); text-align: left;">
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;"><i class="fas fa-university"></i> Transferencia Bancaria</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Alias:</strong> iglesiacdd.corrientes</p>
+                    <p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Titular:</strong> Congregación Cristiana</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Banco de la Nación Argentina</p>
+                </div>
+                <div style="background: var(--bg-card); padding: 2rem; border-radius: 10px; border: 1px solid rgba(128, 128, 128, 0.1); text-align: left;">
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;"><i class="fas fa-qrcode"></i> Escanear QR</h3>
+                    <img src="img/pagoqr.png" alt="QR Mercado Pago - Alias: fh.cdd" style="width: 100%; max-width: 200px; margin: 0 auto 1.5rem auto; display: block; border-radius: 8px;">
+                    <p style="font-size: 0.95rem; color: var(--text-muted); text-align: center;">Escanéa este código desde la app de Mercado Pago para realizar tu donación.<br><strong>Alias: fh.cdd</strong></p>
+                </div>
+            </div>
+
+            <div style="margin-top: 5rem;">
+                <a href="index.html" class="btn-whatsapp" style="text-decoration: none; background: transparent; border: 1px solid var(--accent-color); color: var(--accent-color);">
+                    <i class="fas fa-arrow-left"></i> Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Iglesia Casa de Dios. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
