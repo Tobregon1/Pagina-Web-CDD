@@ -756,8 +756,8 @@ footer {
     .header.scrolled .logo img,
     .header.scrolled .logo img:first-child,
     .header.scrolled .logo img:last-child {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
     }
 
     .nav-links {
@@ -931,14 +931,15 @@ footer {
     padding: 6rem 2rem;
     max-width: 1100px; /* Reducido de 1400px para que los cuadros se vean más chicos */
     margin: 0 auto;
-    overflow: hidden;
+    /* Permitimos que el título grande pueda sobresalir del contenedor */
+    overflow: visible;
 }
 
 .academies-intro {
     position: relative;
     text-align: center;
-    margin-bottom: 5rem;
-    padding: 4rem 0;
+    margin-bottom: 10rem;
+    padding: 1rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -946,9 +947,10 @@ footer {
 }
 
 .academies-title-bg {
-    font-size: clamp(4rem, 15vw, 12rem);
+    /* Reducido para evitar que el título de fondo sea demasiado grande en pantallas anchas */
+    font-size: clamp(10rem, 8vw, 8rem);
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.08); /* Más visible en fondo oscuro */
+    color: rgba(255, 255, 255, 0.226); /* Más visible en fondo oscuro */
     text-transform: lowercase;
     position: absolute;
     top: 50%;
@@ -961,15 +963,55 @@ footer {
 }
 
 body.light-mode .academies-title-bg {
-    color: rgba(0, 0, 0, 0.1); /* Visible en modo claro */
+    color: rgba(255, 255, 255, 0.226); /* Visible en modo claro */
 }
 
 .academies-intro h2 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    /* Aumentado para destacar mejor el título en pantallas grandes y móviles */
+    font-size: clamp(4rem, 8vw, 18rem);
     margin-bottom: 1.5rem;
     letter-spacing: 2px;
     position: relative;
     z-index: 1;
+}
+
+/* --- MINISTERIOS INTRO INDEPENDIENTE --- */
+.ministerios-intro {
+    position: relative;
+    text-align: center;
+    margin-bottom: 5rem;
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ministerios-intro h2 {
+    font-size: clamp(4rem, 8vw, 18rem);
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.ministerios-title-bg {
+    font-size: clamp(10rem, 8vw, 8rem);
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.226);
+    text-transform: lowercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .ministerios-title-bg {
+    color: rgba(255, 255, 255, 0.226);
 }
 
 .academies-grid {
@@ -1046,7 +1088,7 @@ body.light-mode .academies-title-bg {
     }
     
     .academies-intro {
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
 }
 /* --- LUGARES DE REFERENCIA --- */
@@ -1188,7 +1230,9 @@ body.light-mode .academies-title-bg {
     letter-spacing: 3px;
     text-transform: uppercase;
     font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+        /* Incrementado para que el título sea más grande en pantallas anchas */
+        /* Aumentamos el máximo para permitir títulos muy grandes en pantallas anchas */
+        font-size: clamp(4rem, 8vw, 18rem);
     display: block;
 }
 
@@ -1485,14 +1529,6 @@ body.light-mode .academies-title-bg {
         max-width: 100%;
     }
 
-    .academies-grid-container {
-        padding: 3rem 1rem;
-    }
-
-    .academies-title-bg {
-        display: none;
-    }
-
     .academy-info-overlay {
         opacity: 1;
         transform: translateY(0);
@@ -1573,6 +1609,17 @@ body.light-mode .academies-title-bg {
 
     h2 {
         font-size: 1.6rem;
+    }
+
+    /* Mantener el título de `academies-intro` más grande en móviles */
+    .academies-intro h2 {
+        /* Hacer un poco más grande también en móviles */
+        font-size: clamp(2.5rem, 8vw, 6rem);
+    }
+
+    /* Responsive para ministerios-intro independiente */
+    .ministerios-intro h2 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
     }
 
     section {
