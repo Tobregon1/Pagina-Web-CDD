@@ -1052,3 +1052,207 @@ body.light-mode .academies-title-bg {
         padding: 2rem 0;
     }
 }
+
+/* --- DONACIONES --- */
+.donar-main {
+    margin-top: 130px;
+    min-height: 80vh;
+}
+
+.donar-container {
+    max-width: 800px;
+    padding-bottom: 5rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.donar-header {
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.donar-subtitle {
+    color: var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.donar-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin-top: 1rem;
+    line-height: 1.1;
+    color: var(--text-color);
+}
+
+.donar-text {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    line-height: 1.6;
+}
+
+.donar-verse {
+    font-style: italic;
+    font-size: 1rem;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.donar-card-primary {
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    margin-bottom: 3rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.donar-card-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mp-logo {
+    height: 40px;
+    margin-bottom: 2rem;
+}
+
+.donar-card-primary h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: normal;
+}
+
+.donar-card-primary h2::after {
+    display: none;
+}
+
+.donar-card-primary p {
+    margin-bottom: 2.5rem;
+    color: var(--text-muted);
+}
+
+.btn-donar {
+    text-decoration: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-mp {
+    background: #009EE3;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(0, 158, 227, 0.2);
+}
+
+.btn-mp:hover {
+    background: #0087c1;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 158, 227, 0.4);
+}
+
+.donar-disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    display: block;
+}
+
+.donar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.donar-card-secondary {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.donar-card-secondary:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.donar-card-secondary h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.donar-card-secondary p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.donar-card-secondary p strong {
+    color: var(--accent-color);
+}
+
+.donar-card-secondary p.bank-name {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.qr-image {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    padding: 10px;
+    background: white;
+}
+
+.qr-text {
+    font-size: 0.95rem;
+    color: var(--text-muted) !important;
+    text-align: center;
+}
+
+.donar-footer {
+    margin-top: 5rem;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.btn-back {
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color) !important;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: var(--accent-color);
+    color: var(--bg-color) !important;
+    transform: translateX(-5px);
+}
