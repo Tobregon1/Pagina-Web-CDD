@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instituto Bíblico - Iglesia Casa de Dios</title>
-    <link rel="icon" type="image/png" href="img/image.png">
+    <meta name="description" content="Instituto Bíblico de la Iglesia Casa de Dios. Formación teológica sólida: teología sistemática, hermenéutica e historia de la iglesia.">
+    <link rel="icon" type="image/png" href="img/3.png">
     <link rel="stylesheet" href="./CSS/estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
-<body>
-    <!-- Header / Menú -->
+<body class="academy-page">
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo">
@@ -32,58 +30,80 @@
                     </ul>
                 </nav>
                 <div class="header-controls">
-                    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
-                        <i class="fas fa-sun"></i>
-                    </button>
-                    <div class="hamburger" id="hamburger">
-                        <i class="fas fa-bars"></i>
-                    </div>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema"><i class="fas fa-sun"></i></button>
+                    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Contenido Principal -->
-    <main style="margin-top: 130px; min-height: 80vh;">
-        <div class="container" style="max-width: 1000px; padding-bottom: 5rem;">
-            <div style="text-align: center; margin-bottom: 4rem;">
-                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Fundamento de Fe</p>
-                <h1 style="font-size: 3.5rem; margin-top: 1rem;">INSTITUTO BÍBLICO</h1>
-            </div>
-
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="img/academia-biblia.png" alt="Biblia">
+    <main class="academy-main">
+        <div class="container">
+            <header class="academy-hero">
+                <span class="academy-category">Fundamento de Fe</span>
+                <h1 class="academy-title">INSTITUTO BÍBLICO</h1>
+            </header>
+            <div class="academy-container">
+                <div class="academy-grid">
+                    <div class="academy-media">
+                        <img src="img/academia-biblia.png" alt="Instituto Bíblico" class="academy-featured-img">
+                    </div>
+                    <div class="academy-info">
+                        <h2>Cimentados en la Palabra</h2>
+                        <p>El Instituto Bíblico ofrece formación teológica profunda y práctica para todo aquel que desee conocer más a Dios y Su Palabra. Formamos creyentes maduros, capaces de interpretar y aplicar las Escrituras en el mundo actual.</p>
+                        <h3>Nuestras Materias</h3>
+                        <ul class="course-list">
+                            <li class="course-item">
+                                <div class="course-header">
+                                    <i class="fas fa-book-open"></i>
+                                    <span><strong>Teología Sistemática</strong></span>
+                                    <i class="fas fa-chevron-down toggle-icon"></i>
+                                </div>
+                                <div class="course-details">
+                                    <p>Fundamentos de la doctrina cristiana: la naturaleza de Dios, la salvación, la iglesia y los últimos tiempos.</p>
+                                </div>
+                            </li>
+                            <li class="course-item">
+                                <div class="course-header">
+                                    <i class="fas fa-history"></i>
+                                    <span><strong>Historia de la Iglesia</strong></span>
+                                    <i class="fas fa-chevron-down toggle-icon"></i>
+                                </div>
+                                <div class="course-details">
+                                    <p>El legado de nuestra fe desde los primeros siglos hasta el movimiento evangélico contemporáneo.</p>
+                                </div>
+                            </li>
+                            <li class="course-item">
+                                <div class="course-header">
+                                    <i class="fas fa-comment-dots"></i>
+                                    <span><strong>Hermenéutica</strong></span>
+                                    <i class="fas fa-chevron-down toggle-icon"></i>
+                                </div>
+                                <div class="course-details">
+                                    <p>El arte de interpretar la Biblia con fidelidad. Métodos de estudio y exégesis bíblica aplicada.</p>
+                                </div>
+                            </li>
+                            <li class="course-item">
+                                <div class="course-header">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <span><strong>Vida Cristiana</strong></span>
+                                    <i class="fas fa-chevron-down toggle-icon"></i>
+                                </div>
+                                <div class="course-details">
+                                    <p>Aplicación práctica de la Palabra de Dios en la vida diaria, el matrimonio, la familia y el ministerio.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Cimentados en la Palabra</h2>
-                    <p>El Instituto Bíblico ofrece una formación teológica profunda y práctica para todo aquel que desee conocer más a Dios y Su Palabra. Nuestro objetivo es formar creyentes maduros, capaces de interpretar y aplicar las Escrituras en el mundo actual.</p>
-                    
-                    <h3 style="margin-top: 2rem; border-bottom: 2px solid var(--accent-color); display: inline-block;">Nuestras Materias</h3>
-                    <ul style="list-style: none; margin-top: 1.5rem; padding: 0;">
-                        <li style="margin-bottom: 1rem;"><i class="fas fa-book-open" style="color: var(--accent-color); margin-right: 1rem;"></i> <strong>Teología Sistemática:</strong> Fundamentos de la doctrina cristiana.</li>
-                        <li style="margin-bottom: 1rem;"><i class="fas fa-history" style="color: var(--accent-color); margin-right: 1rem;"></i> <strong>Historia de la Iglesia:</strong> El legado de nuestra fe.</li>
-                        <li style="margin-bottom: 1rem;"><i class="fas fa-comment-dots" style="color: var(--accent-color); margin-right: 1rem;"></i> <strong>Hermenéutica:</strong> El arte de interpretar la Biblia.</li>
-                        <li style="margin-bottom: 1rem;"><i class="fas fa-hands-helping" style="color: var(--accent-color); margin-right: 1rem;"></i> <strong>Vida Cristiana:</strong> Aplicación práctica de la Palabra.</li>
-                    </ul>
-                </div>
             </div>
-
-            <div style="margin-top: 4rem; text-align: center;">
-                <a href="academias.html" class="btn-whatsapp" style="text-decoration: none;">
-                    <i class="fas fa-arrow-left"></i> Volver a Academias
-                </a>
+            <div style="text-align: center;">
+                <a href="academias.html" class="btn-back"><i class="fas fa-arrow-left"></i> Volver a Academias</a>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Iglesia Casa de Dios. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
+    <footer><div class="container"><p>&copy; 2026 Iglesia Casa de Dios. Todos los derechos reservados.</p></div></footer>
     <script src="js/main.js"></script>
 </body>
 </html>

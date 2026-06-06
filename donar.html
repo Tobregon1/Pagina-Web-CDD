@@ -58,24 +58,60 @@
             </div>
 
             <!-- Mercado Pago Card -->
-            <div class="donar-card-primary">
-                <img src="https://logotipous.com/wp-content/uploads/2021/08/Mercado-Pago-Logo.png" alt="Mercado Pago" class="mp-logo">
-                <h2>Donar vía Mercado Pago</h2>
-                <p>Realiza tu donación de forma segura y rápida a través de nuestra cuenta oficial.</p>
+            <div class="donar-card-primary" style="text-align: center;">
+                <img src="img/mercadopago.png" alt="Mercado Pago" class="mp-logo" style="margin-bottom: 1rem; max-height: 40px;">
+                <h2>Donar vía Mercado Pago u otra Billetera</h2>
+                <p>Realiza tu donación de forma segura mediante transferencia utilizando nuestro alias.</p>
                 
-                <a href="https://link.mercadopago.com.ar/TU-LINK-AQUI" target="_blank" class="btn-donar btn-mp">
-                    <i class="fas fa-hand-holding-heart"></i> Realizar Donación
-                </a>
-                <span class="donar-disclaimer">* Se abrirá una nueva pestaña en Mercado Pago</span>
+                <div style="background-color: var(--background-alt); padding: 1rem; border-radius: 8px; margin: 1.5rem 0; border: 1px solid var(--border-color);">
+                    <p style="margin: 0; font-size: 1.2rem; color: var(--text-color);">Alias: <strong style="color: var(--accent-color);">FH.CDD</strong></p>
+                </div>
+                
+                <button onclick="copiarYTransferir()" class="btn-donar btn-mp" style="cursor: pointer; border: none; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; font-family: inherit; font-size: 1rem;">
+                    <i class="fas fa-copy"></i> Copiar Alias y Transferir
+                </button>
+                <span class="donar-disclaimer" style="display: block; margin-top: 1rem;">* Se copiará el alias y se abrirá Mercado Pago</span>
+
+                <script>
+                    function copiarYTransferir() {
+                        const alias = "FH.CDD";
+                        // Fallback implementation for older browsers or HTTP (non-HTTPS) environments
+                        const tempInput = document.createElement("input");
+                        tempInput.value = alias;
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        try {
+                            document.execCommand("copy");
+                            alert("¡Alias " + alias + " copiado con éxito!\n\nAhora te redirigiremos a Mercado Pago para que pegues el alias y realices la transferencia.");
+                        } catch (err) {
+                            alert("Por favor copia el alias manualmente: " + alias);
+                        }
+                        document.body.removeChild(tempInput);
+                        
+                        window.open("https://www.mercadopago.com.ar/", "_blank");
+                    }
+                </script>
             </div>
 
             <!-- Otros Medios -->
             <div class="donar-grid">
                 <div class="donar-card-secondary">
                     <h3><i class="fas fa-university"></i> Transferencia Bancaria</h3>
-                    <p><strong>Alias:</strong> iglesiacdd.corrientes</p>
-                    <p><strong>Titular:</strong> Congregación Cristiana</p>
-                    <p class="bank-name">Banco de la Nación Argentina</p>
+                    <p><strong>Alias:</strong> FH.CDD</p>
+                    <p><strong>Titular:</strong> Fundación Hechos Sin Fines de Lucros</p>
+                    <p class="bank-name">Mercado Pago</p>
+                </div>
+                <div class="donar-card-secondary">
+                    <h3><i class="fas fa-university"></i> Transferencia Bancaria</h3>
+                    <p><strong>Alias:</strong> ANGELESDEPUENTE</p>
+                    <p><strong>Titular:</strong> Angeles Del Puente</p>
+                    <p class="bank-name">Banco de Corrientes</p>
+                </div>
+                <div class="donar-card-secondary">
+                    <h3><i class="fas fa-university"></i> Transferencia Bancaria</h3>
+                    <p><strong>Alias:</strong> ANGELESDEPUENTECDD</p>
+                    <p><strong>Titular:</strong> Angeles Del Puente</p>
+                    <p class="bank-name">Banco de Corrientes en Dólares</p>
                 </div>
                 <div class="donar-card-secondary">
                     <h3><i class="fas fa-qrcode"></i> Escanear QR</h3>

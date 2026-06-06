@@ -70,33 +70,46 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 const slide = document.getElementById('carouselSlide');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
-const images = slide.querySelectorAll('img');
-let currentIndex = 0;
-const totalSlides = images.length;
 
-function updateSlide() {
-    slide.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
+if (slide) {
+    // --- Shuffle carousel images (Fisher-Yates) ---
+    (function shuffleCarousel() {
+        const imgs = Array.from(slide.querySelectorAll('img'));
+        for (let i = imgs.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            slide.appendChild(imgs[j]); // mover al final reordena el DOM
+            imgs.splice(j, 1);          // sacar del array para no repetir
+        }
+    })();
 
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateSlide();
-}
+    const images = slide.querySelectorAll('img');
+    let currentIndex = 0;
+    const totalSlides = images.length;
 
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateSlide();
-}
+    function updateSlide() {
+        slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
 
-if (totalSlides > 1) {
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-    // Auto-slide
-    setInterval(nextSlide, 5000);
-} else {
-    // Hide buttons if only 1 image
-    if (prevBtn) prevBtn.style.display = 'none';
-    if (nextBtn) nextBtn.style.display = 'none';
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlide();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlide();
+    }
+
+    if (totalSlides > 1) {
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        // Auto-slide
+        setInterval(nextSlide, 5000);
+    } else {
+        // Hide buttons if only 1 image
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+    }
 }
 
 // --- WhatsApp Forms Logic ---
@@ -168,4 +181,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOption);
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // --- Accordion Logic for Academies ---
+    const courseHeaders = document.querySelectorAll('.course-header');
+    courseHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const courseItem = header.parentElement;
+            
+            // Optionally close other items if you want a true accordion (only one open)
+            // Comment out the next 3 lines if you want multiple items to be open at once
+            document.querySelectorAll('.course-item').forEach(item => {
+                if (item !== courseItem) item.classList.remove('active');
+            });
+
+            courseItem.classList.toggle('active');
+        });
+    });
 });

@@ -565,8 +565,17 @@ h2::after {
 .carousel-slide img {
     width: 100%;
     height: 550px;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: #000000;
     flex-shrink: 0;
+    /* Filtro estético: contraste realzado + tono cálido dorado */
+    filter: contrast(1.1) brightness(0.95) saturate(1.2) sepia(0.18);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.carousel-slide img:hover {
+    filter: contrast(1.15) brightness(1.05) saturate(1.3) sepia(0.1);
+    transform: scale(1.02);
 }
 
 .carousel-btn {
@@ -593,6 +602,122 @@ h2::after {
 
 .next-btn {
     right: 0;
+}
+
+/* --- SECCIÓN SEDES --- */
+.branches-section {
+    background-color: var(--bg-card);
+    padding: 6rem 0;
+}
+
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.branch-card {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.branch-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.branch-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-color);
+}
+
+.branch-card:hover::before {
+    transform: scaleX(1);
+}
+
+.branch-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(193, 159, 99, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    border: 1px solid rgba(193, 159, 99, 0.25);
+}
+
+.branch-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: 0;
+    font-weight: 600;
+}
+
+.branch-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.branch-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.branch-item i {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.branch-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: #fff !important;
+    text-decoration: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+    margin-top: 0.5rem;
+}
+
+.branch-whatsapp:hover {
+    background: #20bd5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
 /* Contactos */
@@ -1255,4 +1380,169 @@ body.light-mode .academies-title-bg {
     background: var(--accent-color);
     color: var(--bg-color) !important;
     transform: translateX(-5px);
+}
+
+/* --- ACADEMY PAGES (Modern Layout) --- */
+.academy-main {
+    margin-top: 130px;
+    min-height: 80vh;
+    padding-bottom: 5rem;
+}
+
+.academy-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.academy-category {
+    color: var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.academy-title {
+    font-size: 3.5rem;
+    margin-top: 1rem;
+    color: var(--text-color);
+}
+
+.academy-container {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 4rem;
+}
+
+.academy-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.academy-media {
+    flex: 1;
+    min-width: 300px;
+}
+
+.academy-featured-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    object-fit: cover;
+}
+
+.academy-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.academy-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.academy-info h2::after {
+    margin: 15px 0 0; /* Align underline to left */
+}
+
+.academy-info p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+}
+
+.academy-info h3 {
+    margin-top: 2rem;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.course-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-item {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.course-header {
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.course-header:hover {
+    background-color: rgba(193, 159, 99, 0.05);
+}
+
+.course-header i:first-child {
+    color: var(--accent-color);
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.course-header span {
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+.toggle-icon {
+    display: block;
+    transition: transform 0.3s ease;
+    color: var(--text-muted);
+}
+
+.course-details {
+    padding: 0 1.5rem 0 4.2rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
+}
+
+.course-item.active .course-details {
+    padding-bottom: 1.5rem;
+    max-height: 500px;
+    opacity: 1;
+}
+
+.course-item.active .toggle-icon {
+    transform: rotate(180deg);
+    color: var(--accent-color);
+}
+
+.course-details p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .academy-grid {
+        flex-direction: column;
+    }
+    
+    .academy-title {
+        font-size: 2.2rem;
+    }
+    
+    .course-details {
+        padding-left: 1.5rem;
+    }
 }
