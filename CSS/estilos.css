@@ -1119,6 +1119,29 @@ body.light-mode .academies-title-bg {
     display: block;
 }
 
+.permanent-title {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    color: white;
+    font-size: clamp(1rem, 1.8vw, 1.6rem);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 2;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9), 0px 0px 4px rgba(0,0,0,0.5);
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    word-break: break-word;
+}
+
+.academy-card:hover .permanent-title {
+    opacity: 0;
+}
+
 .academy-card img {
     width: 100%;
     height: 100%;
